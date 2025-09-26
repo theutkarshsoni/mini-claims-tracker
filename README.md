@@ -57,7 +57,7 @@ mini-claims-tracker/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/<your-username>/mini-claims-tracker.git
+git clone https://github.com/theutkarshsoni/mini-claims-tracker.git
 cd mini-claims-tracker
 ```
 
