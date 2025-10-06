@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  dynamodb:
+    image: amazon/dynamodb-local
+    ports: ["8001:8000"]
+  backend:
+    build: ./backend
+    environment:
+      - USE_DDB=1
+      - CLAIMS_TABLE=ClaimsTable
+      - DDB_ENDPOINT=http://dynamodb:8000
+    ports: ["8000:8000"]
+    depends_on: [dynamodb]
+  frontend:
+    build: ./frontend
+    ports: ["3000:3000"]
+    depends_on: [backend]
